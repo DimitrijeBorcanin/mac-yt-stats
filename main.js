@@ -20,7 +20,8 @@ const getVideoData = async (videoId) => {
     const data = await response.json()
     videoData = {
         title: data["items"][0]["snippet"]["title"].replace(" /ROCK NUMERA #MAC2023Nominee", ""),
-        likes: data["items"][0]["statistics"]["likeCount"]
+        likes: data["items"][0]["statistics"]["likeCount"],
+        views: data["items"][0]["statistics"]["viewCount"]
     }
     return videoData
 }
@@ -59,10 +60,11 @@ window.onload = async () => {
             return `<li class="text-blue-500 font-bold">
                         ${index + 1}. ${video.title} - ${video.likes} &nbsp; 
                         <span class="text-red-500"><i class="fa-solid fa-caret-down"></i> ${video.difference.up}</span> &nbsp; 
-                        <span class="text-green-500"><i class="fa-solid fa-caret-up"></i> ${video.difference.down}</span>
+                        <span class="text-green-500"><i class="fa-solid fa-caret-up"></i> ${video.difference.down}</span> &nbsp;
+                        <span class="text-sm">(${video.views} pregleda)</span>
                     </li>`
         }
-        return `<li>${index + 1}. ${video.title} - ${video.likes}</li>`
+        return `<li>${index + 1}. ${video.title} - ${video.likes} <span class="text-sm">(${video.views} pregleda)</span></li>`
     }).join("")
 
     document.getElementById("list").innerHTML = renderedList;
