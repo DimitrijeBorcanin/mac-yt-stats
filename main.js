@@ -38,9 +38,29 @@ window.onload = async () => {
     }
     videos.sort((a, b) => b.likes - a.likes)
 
+    for(let i = 0; i < videos.length; i++){
+        let up = null
+        let down = null
+        if(videos[i-1]){
+            up = videos[i-1]["likes"] - videos[i]["likes"]
+        }
+        if(videos[i+1]){
+            down = videos[i]["likes"] - videos[i+1]["likes"]
+        }
+        const difference = {
+            up,
+            down
+        }
+        videos[i]['difference'] = difference
+    }
+
     const renderedList = videos.map((video, index) => {
         if(video.title.includes("Lift")){
-            return `<li class="text-blue-500 font-bold">${index + 1}. ${video.title} - ${video.likes}</li>`
+            return `<li class="text-blue-500 font-bold">
+                        ${index + 1}. ${video.title} - ${video.likes} &nbsp; 
+                        <span class="text-red-500"><i class="fa-solid fa-caret-down"></i> ${video.difference.up}</span> &nbsp; 
+                        <span class="text-green-500"><i class="fa-solid fa-caret-up"></i> ${video.difference.down}</span>
+                    </li>`
         }
         return `<li>${index + 1}. ${video.title} - ${video.likes}</li>`
     }).join("")
