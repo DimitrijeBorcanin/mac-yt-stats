@@ -58,10 +58,10 @@ window.onload = async () => {
     const renderedList = videos.map((video, index) => {
         if(video.title.includes("Lift")){
             return `<li class="text-blue-500 font-bold">
-                        ${index + 1}. ${video.title} - ${video.likes} &nbsp; 
-                        <span class="text-red-500"><i class="fa-solid fa-caret-down"></i> ${video.difference.up}</span> &nbsp; 
-                        <span class="text-green-500"><i class="fa-solid fa-caret-up"></i> ${video.difference.down}</span> &nbsp;
-                        <span class="text-sm">(${video.views} pregleda)</span>
+                        ${index + 1}. ${video.title} - ${video.likes} 
+                        <span class="text-red-500 pl-2 ${video.difference.up ? '' : 'hidden'}"><i class="fa-solid fa-caret-down"></i> ${video.difference.up}</span> 
+                        <span class="text-green-500 pl-2 ${video.difference.down ? '' : 'hidden'}"><i class="fa-solid fa-caret-up"></i> ${video.difference.down}</span>
+                        <span class="text-sm pl-2">(${video.views} pregleda)</span>
                     </li>`
         }
         return `<li>${index + 1}. ${video.title} - ${video.likes} <span class="text-sm">(${video.views} pregleda)</span></li>`
