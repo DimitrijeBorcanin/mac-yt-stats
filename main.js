@@ -70,4 +70,9 @@ window.onload = async () => {
     document.getElementById("list").innerHTML = renderedList;
     loadingDiv.style.display = "none"
 
+    if(videos[0]["title"].includes("Lift")){
+        const jsConfetti = new JSConfetti();
+        jsConfetti.addConfetti()
+    }
+
 }
