@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>MAC lajkovi</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+    <script src="https://kit.fontawesome.com/fa2b9bf0b8.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <main class="container mx-auto my-10 px-10">
+        <div class="flex">
+            <a href="home.html" class="navBtn px-3 py-2 m-3 bg-gray-100 rounded-sm" data-page="likes">Lajkovi</a>
+            <a href="calculator.html" class="navBtn px-3 py-2 m-3 bg-gray-100 rounded-sm" data-page="calculator">Kalkulator</a>
+        </div>
+        <div id="calculatorContainer">
+            <h1 class="text-lg pb-3">Kalkulator glasova</h1>
+            <div class="w-full md:w-1/2 block md:flex gap-2">
+                <div>
+                    <label for="percentPre">Procenti pre glasanja:</label>
+                    <input type="text" id="percentPre" class="border-2" />
+                </div>
+                <div>
+                    <label for="addedVotes">Broj dodatih glasova:</label>
+                    <input type="text" id="addedVotes" class="border-2" />
+                </div>
+                <div>
+                    <label for="percentPost">Procenti posle glasanja:</label>
+                    <input type="text" id="percentPost" class="border-2" />
+                </div>
+            </div>
+            <button class="px-3 py-2 m-3 bg-gray-100 rounded-sm" id="calculateBtn">Izračunaj</button>
+            <p id="result" class="text-lg"></p>
+        </div>
+    </main>
+    <script src="calculator.js"></script>
+</body>
+</html>

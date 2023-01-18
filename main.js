@@ -28,6 +28,25 @@ const getVideoData = async (videoId) => {
 
 window.onload = async () => {
 
+    // const likeContainer = document.getElementById('likeContainer')
+    // const calculatorContainer = document.getElementById('calculatorContainer')
+    // likeContainer.style.display = 'none'
+
+    // const navBtns = document.getElementsByClassName('navBtn')
+    // const changePage = (e) => {
+    //     if(e.target.dataset.page == 'likes'){
+    //         calculatorContainer.style.display = 'none';
+    //         likeContainer.style.display = 'block';
+    //     } else {
+    //         calculatorContainer.style.display = 'block';
+    //         likeContainer.style.display = 'none';
+    //     }
+    // }
+    // for(const nav of navBtns){
+    //     nav.addEventListener('click', changePage)
+    // }
+   
+
     const loadingDiv = document.getElementById("loading")
     loadingDiv.style.display = "flex"
 
